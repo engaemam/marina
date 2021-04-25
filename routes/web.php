@@ -40,7 +40,7 @@ Route::group([ 'middleware' => ['checkadmin']], function () {
 
 
     //create Boats
-    Route::get('/boats', [App\Http\Controllers\BoatsController::class, 'index']);
+    Route::get('/list/boats', [App\Http\Controllers\BoatsController::class, 'index']);
     Route::get('/create/boat', [App\Http\Controllers\AdminController::class, 'showCreateBoat'])->name('create_boat');
     Route::post('/create/boat', [App\Http\Controllers\AdminController::class, 'createBoat']);
 
