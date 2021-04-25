@@ -7,23 +7,46 @@ use App\Models\Clients;
 use App\Models\InvoiceLogs;
 use App\Models\Invoices;
 use App\Models\Packages;
+use App\Traits\Uploads;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
 
+    use Uploads;
+
+
     public function showCreateClient(){
+
 
         return view('marina_front.clients.client_register');
     }
 
     public function createClient(Request $request){
+        $name = '';
 
+      //        dd('test');
 
-        $this->validate($request, [
+        $rules = $this->validate($request, [
             'email' => 'required|email',
             'national_id' => 'required',
+            'mobile' => 'required|unique:client',
         ]);
+
+
+
+//        $validate = Validator::make($request, $rules, $messages = [
+//            'unique' => 'The :attribute field is required.',
+//        ]);
+
+
+
+
+        $name = $this->upload_image($request,'national_id_image','clients');
+
+
+
+
 
         $client = Clients::create([
         'name' => $request->name,
@@ -31,7 +54,7 @@ class AdminController extends Controller
         'mobile' => $request->mobile,
         'job_title' => $request->job_title,
         'address' => $request->address,
-        'national_id_image' => $request->national_id_image,
+        'national_id_image' => $name,
         'national_id' => $request->national_id,
         'nationality' => $request->nationality
         ]);
@@ -51,12 +74,18 @@ class AdminController extends Controller
 
     public function createBoat(Request $request){
 
+        $names =  json_encode($this->multipleUploads($request,'images','boats'));
+
+
+
+
+
 
         $boat = Boats::create([
             'name' => $request->name,
             'length' => $request->length,
             'color' => $request->color,
-            'images' => $request->image,
+            'images' => $names,
             'user_id' => $request->user_id,
             'package_id' => $request->package_id,
         ]);

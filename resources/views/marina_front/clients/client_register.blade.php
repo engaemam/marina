@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create Client') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('create_client') }}">
+                    <form method="POST" action="{{ route('create_client') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <input id="mobile" type="number"  class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autofocus>
 
-                                @error('name')
+                                @error('mobile')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
