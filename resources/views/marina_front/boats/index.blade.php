@@ -26,7 +26,7 @@
                                 <td>{{$boat->length}}</td>
                                 <td>{{$boat->images}}</td>
                                 <td><input type="color" id="favcolor" name="favcolor" value="{{$boat->color}}" disabled></td>
-                                <td>{{$boat->user->name}}</td>
+                                <td>{{$boat->client->name}}</td>
                                 <td>{{$boat->package->name}}</td>
                                 <td>{{$payment_array[$boat->id]['paid']}}</td>
                                 <td>{{$payment_array[$boat->id]['not_paid']}}</td>

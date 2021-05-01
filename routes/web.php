@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
+//use Hash;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
+| document.getElementById('logout-form').submit();g
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
@@ -17,7 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*
+Route::get('/create_admin', function () {
+   User::create(['name'=>'nour','email' =>'n@n.com' ,'password' => Hash::make('123123') ,'national_id' => '123123','type' => 'admin','national_id_image' => 'img.png','mobile' => '123123123123']);
+   return redirect('login');
+});
 
+*/
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 
