@@ -24,8 +24,10 @@
                             <tr>
                                 <td><a href="#">{{$boat->name}}</a></td>
                                 <td>{{$boat->length}}</td>
-
+                            @if (json_decode($boat->images) != null)
                                 <td>
+                                   
+                                        
                                     @foreach(json_decode($boat->images) as $boat_image)
 
                                         <img style="width: 50px" src="{{url('/boats')}}/{{$boat_image}}">
@@ -33,7 +35,12 @@
                                     @endforeach
 
                                 </td>
+                                @else
 
+                                <td>
+                                      <img style="width: 40px" src="{{url('/images/no-image.png')}}">  No images.
+                                </td>
+                                @endif
                                 <td><input type="color" id="favcolor" name="favcolor" value="{{$boat->color}}" disabled></td>
                                 <td>{{$boat->client->name}}</td>
                                 <td>{{$boat->package->name}}</td>

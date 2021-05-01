@@ -33,7 +33,7 @@
                         </div>
                     @endif
                     <a type="button" class="btn btn-danger" href="{{url('create/boat')}}">Create Boat</a>
-                    <a type="button" class="btn btn-warning" href="{{url('boats')}}">Boats List</a>
+                    <a type="button" class="btn btn-warning" href="{{url('/list/boats')}}">Boats List</a>
                 </div>
             </div>
         </div>
