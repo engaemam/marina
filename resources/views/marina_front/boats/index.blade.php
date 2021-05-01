@@ -24,10 +24,20 @@
                             <tr>
                                 <td><a href="#">{{$boat->name}}</a></td>
                                 <td>{{$boat->length}}</td>
-                                <td>{{$boat->images}}</td>
+
+                                <td>
+                                    @foreach(json_decode($boat->images) as $boat_image)
+
+                                        <img style="width: 50px" src="{{url('/boats')}}/{{$boat_image}}">
+
+                                    @endforeach
+
+                                </td>
+
                                 <td><input type="color" id="favcolor" name="favcolor" value="{{$boat->color}}" disabled></td>
                                 <td>{{$boat->client->name}}</td>
                                 <td>{{$boat->package->name}}</td>
+
                                 <td>{{$payment_array[$boat->id]['paid']}}</td>
                                 <td>{{$payment_array[$boat->id]['not_paid']}}</td>
                                 <td><a class="btn btn-warning" href="{{url('edit/boat').'/'.$boat->id}}"><i class="fa fa-edit"></i></a> <button class="btn btn-danger"><i class="fa fa-trash"></i></button> </td>
