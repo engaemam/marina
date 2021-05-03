@@ -40,4 +40,22 @@ class BoatsController extends Controller
       return view('marina_front.boats.edit_boat',compact('boat','clients','packages'));
 
     }
+
+
+
+
+public function delete($boat_id = null){
+
+
+    if($boat_id != null ){
+
+        $boat = Boats::find($boat_id);
+        $boat->delete();
+        return redirect()->back()->with('successDeleteMsg','The requested <strong>boat deleted</strong> successfully');
+    }
+    
+  }
+
+
+  
 }
