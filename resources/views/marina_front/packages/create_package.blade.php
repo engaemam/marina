@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Create Package') }}</div>
+                    <div class="card-header"><b><i class="fa fa-list-alt "> </i> {{ __('Create Package') }}</b></div>
                     {{--'name','length', 'color', 'images','user_id'--}}
                     <div class="card-body">
                         <form method="POST" action="{{ route('create_package') }}">
@@ -66,8 +66,8 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('create client') }}
+                                    <button type="submit" class="btn btn-success">
+                                        {{ __('Create Pakage') }}
                                     </button>
                                 </div>
                             </div>

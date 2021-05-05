@@ -1,0 +1,139 @@
+.buttony {
+    border-radius: 5px;
+    background-color: #5e5e5e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.buttony:hover {
+    background-color: #000;
+    color: #FFFFFF
+}
+
+.buttony span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.buttony span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.buttony:hover span {
+    padding-right: 25px;
+}
+
+.buttony:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.buttonb {
+    border-radius: 5px;
+    background-color: #3f7bb9;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.buttonb:hover {
+    background-color: #172d44;
+    color: #FFFFFF
+}
+
+.buttonb span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.buttonb span:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -30px;
+    transition: 0.5s;
+}
+
+.buttonb:hover span {
+    padding-left: 25px;
+}
+
+.buttonb:hover span:before {
+    opacity: 1;
+    left: 0;
+}
+
+.buttonyx {
+    border-radius: 5px;
+    background-color: #ae423f;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.buttonyx:hover {
+    background-color: #172d44;
+    color: #FFFFFF
+}
+
+.buttonyx span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.buttonyx span:before {
+    content: "\f155";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -30px;
+    transition: 0.5s;
+}
+
+.buttonyx:hover span {
+    padding-left: 25px;
+}
+
+.buttonyx:hover span:before {
+    opacity: 1;
+    left: 0;
+}

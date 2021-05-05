@@ -21,6 +21,11 @@ class Boats extends Model
             return $this->belongsTo('App\Models\User','user_id');
 
     }
+    public function client(){
+
+        return $this->belongsTo('App\Models\Clients','user_id');
+
+}
 
     public function package(){
 

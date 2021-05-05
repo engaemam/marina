@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Create Boat') }}</div>
+                    <div class="card-header"><b><i class="fa fa-ship"> </i>  {{ __('Create Boat') }}</div>
                     {{--'name','length', 'color', 'images','user_id'--}}
                     <div class="card-body">
                         <form method="POST" action="{{ route('create_boat') }}" enctype="multipart/form-data">
@@ -113,7 +113,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('create client') }}
+                                        {{ __('Create Boat') }}
                                     </button>
                                 </div>
                             </div>

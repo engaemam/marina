@@ -5,8 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Pay Invoice') }}</div>
-
+                    <div class="card-header"> <i class="fa fa-dollar"></i> {{ __('Pay Invoice') }}</div>
+<br>
 
 
 
@@ -99,15 +99,19 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('create invoice') }}
+                                <button type="submit" class="btn btn-dark">
+                                    {{ __('Pay Invoice') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                </br>     </br>
                 </div>
+           
             </div>
+        
         </div>
+   
     </div>
     <script>
 

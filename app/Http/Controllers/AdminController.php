@@ -13,55 +13,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
-    use Uploads;
-
-
-    public function showCreateClient(){
-
-
-        return view('marina_front.clients.client_register');
-    }
-
-    public function createClient(Request $request){
-        $name = '';
-
-      //        dd('test');
-
-        $rules = $this->validate($request, [
-            'email' => 'required|email',
-            'national_id' => 'required',
-            'mobile' => 'required|unique:client',
-        ]);
-
-
-
-//        $validate = Validator::make($request, $rules, $messages = [
-//            'unique' => 'The :attribute field is required.',
-//        ]);
-
-
-
-
-        $name = $this->upload_image($request,'national_id_image','clients');
-
-
-
-
-
-        $client = Clients::create([
-        'name' => $request->name,
-        'email'=> $request->email,
-        'mobile' => $request->mobile,
-        'job_title' => $request->job_title,
-        'address' => $request->address,
-        'national_id_image' => $name,
-        'national_id' => $request->national_id,
-        'nationality' => $request->nationality
-        ]);
-
-        return view('home');
-    }
-
     public function showCreateBoat(){
 
         $clients = Clients::all();
@@ -139,13 +90,15 @@ class AdminController extends Controller
         $total = $total * $tax;
 
         $invoice = Invoices::create([
-            'user_id' => Boats::find($request->boat_id)->user->id,
+            'user_id' => Boats::find($request->boat_id)->client->id,
             'boat_id' => $request->boat_id,
             'tax' => $request->tax,
             'issue_date' => \Carbon\Carbon::today(),
             'total' => $total,
+            'rate' => $boat->package->rate,
 
         ]);
+
         return view('home');
 
 
