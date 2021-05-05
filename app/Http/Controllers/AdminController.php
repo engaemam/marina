@@ -47,28 +47,6 @@ class AdminController extends Controller
 
     }
 
-    public function showCreatePackage(){
-
-
-
-        return view('marina_front.packages.create_package');
-
-    }
-
-    public function createPackage(Request $request){
-
-
-        $package = Packages::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'rate' => $request->rate
-        ]);
-
-        return view('home');
-
-
-
-    }
 
     public function showCreateInvoice(){
 

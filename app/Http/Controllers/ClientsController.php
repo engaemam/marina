@@ -15,7 +15,7 @@ class ClientsController extends Controller
 
 
     use Uploads;
-    // Get all "Client List"
+   
     public function index(){
         $clients = Clients::all();
         
@@ -35,7 +35,7 @@ class ClientsController extends Controller
   public function createClient(Request $request){
       $name = '';
 
-    //        dd('test');
+
 
       $rules = $this->validate($request, [
           'email' => 'required|email',
@@ -72,5 +72,17 @@ class ClientsController extends Controller
       return view('home');
   }
 
+
+  public function delete($client_id = null){
+
+
+    if($client_id != null ){
+
+        $client = Clients::find($client_id);
+        $client->delete();
+        return redirect()->back()->with('successDeleteMsg','The requested <strong>client deleted</strong> successfully');
+    }
+    
+  }
 
 }
