@@ -70,7 +70,7 @@
                     @endif
 
                     <a type="button"  class="buttonb " href="{{url('create/invoice')}}"><span> New Invoice</span></a>
-                    <a type="button" class="buttony" href="{{url('pay/invoice')}}"><span> Invoices List</span> </a>
+                    <a type="button" class="buttony" href="{{url('list/invoice')}}"><span> Invoices List</span> </a>
                     <a type="button" class="buttonyx" href="{{url('pay/invoice')}}"><span> Pay Invoice</span></a>
 
                 </div>

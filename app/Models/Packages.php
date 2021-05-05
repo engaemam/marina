@@ -9,4 +9,12 @@ class Packages extends Model
 {
     use HasFactory;
     protected $fillable = ['name','description', 'rate'];
+
+
+    public function boats(){
+
+        return $this->hasMany('App\Models\Boats','user_id');
+
+    }
+
 }

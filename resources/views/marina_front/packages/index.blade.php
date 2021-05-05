@@ -25,8 +25,8 @@
             <div class="col-lg-12">
                 <table id="packages_table" class="display">
                     <thead>
-                    <tr>
-                        <th>Name</th>
+                        <tr align="center" >
+                            <th>Name</th>
                         <th>Description</th>
                         <th>Rate</th>
                         <th>Boats on Package</th>
@@ -36,17 +36,17 @@
                     </thead>
                     <tbody>
                         @foreach($packages as $package)
-                            <tr>
-                                <td><a href="#">{{$package->name}}</a></td>
+                        <tr align="center" >
+                            <td><a href="#">{{$package->name}}</a></td>
                                 <td>{{$package->description}}</td>
                                 <td>{{$package->rate}}</td>
-                                <td>{{$package->rate}}</td>
+                                <td>{{$package->boatsOnPackage}}</td>
   
-                                <td>  <div class="row">
-                                    <div class="col-lg-2">
+                                <td dir="rtl">  <div align="center" class="row">
+                                    <div align="center"class="col-lg-2">
                                     <a class="btn btn-warning" href="{{url('edit/package').'/'.$package->id}}"><i class="fa fa-edit"></i></a> 
                                     </div>
-                                    <div class="col-lg-2">
+                                    <div  align="center" class="col-lg-2">
                                         <form action="{{url('delete/package').'/'.$package->id}}" method="POST">
                                             @method('POST')
                                             @csrf

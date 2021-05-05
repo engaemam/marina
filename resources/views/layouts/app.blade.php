@@ -101,5 +101,8 @@
     $(document).ready( function () {
         $('#clients_table').DataTable();
     });
+    $(document).ready( function () {
+        $('#invoices_table').DataTable();
+    });
 </script>
 </html>

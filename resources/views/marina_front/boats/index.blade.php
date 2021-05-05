@@ -25,8 +25,8 @@
             <div class="col-lg-12">
                 <table id="boats_table" class="display">
                     <thead>
-                    <tr>
-                        <th>Name</th>
+                        <tr align="center" >
+                            <th>Name</th>
                         <th>Length</th>
                         <th>Image</th>
                         <th>Color</th>
@@ -39,8 +39,8 @@
                     </thead>
                     <tbody>
                         @foreach($boats as $boat)
-                            <tr>
-                                <td><a href="#">{{$boat->name}}</a></td>
+                        <tr align="center" >
+                            <td><a href="#">{{$boat->name}}</a></td>
                                 <td>{{$boat->length}}</td>
 
                                 <!-- Added Handler for the no image uploaded-->
@@ -67,7 +67,7 @@
 
                                 <td>{{$payment_array[$boat->id]['paid']}}</td>
                                 <td>{{$payment_array[$boat->id]['not_paid']}}</td>
-                                <td>
+                                <td dir="rtl">
                                     
                                     <div class="row">
                                         <div class="col-lg-4">

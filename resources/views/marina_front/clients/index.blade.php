@@ -25,8 +25,8 @@
             <div class="col-lg-12">
                 <table id="clients_table" class="display">
                     <thead>
-                    <tr>
-                        <th>Name</th>
+                        <tr align="center" >
+                            <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Nationality</th>
@@ -39,8 +39,8 @@
                     </thead>
                     <tbody>
                         @foreach($clients as $client)
-                            <tr>
-                                <td><a href="#">{{$client->name}}</a></td>
+                        <tr align="center" >
+                            <td><a href="#">{{$client->name}}</a></td>
                                 <td>{{$client->email}}</td>
                                 <td>{{$client->mobile}}</td>
                                 <td>{{$client->nationality}}</td>
@@ -49,7 +49,7 @@
                                 <td>{{$client->address}}</td>
                                 <td>{{$client->job_title}}</td>
                       
-                                <td><a class="btn btn-warning" href="{{url('edit/client').'/'.$client->id}}"><i class="fa fa-edit"></i></a> <button class="btn btn-danger"><i class="fa fa-trash"></i></button> </td>
+                                <td dir="rtl"><a class="btn btn-warning" href="{{url('edit/client').'/'.$client->id}}"><i class="fa fa-edit"></i></a> <button class="btn btn-danger"><i class="fa fa-trash"></i></button> </td>
                             </tr>
                         @endforeach
                     </tbody>

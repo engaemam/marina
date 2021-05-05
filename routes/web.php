@@ -86,14 +86,14 @@ Route::group([ 'middleware' => ['checkadmin']], function () {
     Route::post('/create/package', [App\Http\Controllers\AdminController::class, 'createPackage']);
     
     //Show Edit Package form -- update package                      
-    Route::get('/edit/package/{package_id}', [App\Http\Controllers\BoatsController::class, 'edit']);
-    Route::post('/edit/package', [App\Http\Controllers\BoatsController::class, 'editBoat'])->name('edit_boat');
+    Route::get('/edit/package/{package_id}', [App\Http\Controllers\PackagesController::class, 'edit']);
+    Route::post('/edit/package', [App\Http\Controllers\PackagesController::class, 'editPackage'])->name('edit_Package');
    
     // Show All Packages                                             
     Route::get('/list/packages', [App\Http\Controllers\PackagesController::class, 'index']);
     
     //Delete Package           ---> must be an admin with privellages                            
-    Route::post('/delete/package/{package_id}', [App\Http\Controllers\BoatsController::class, 'delete']);
+    Route::post('/delete/package/{package_id}', [App\Http\Controllers\PackageController::class, 'delete']);
     
     // Get Specific boat by id 
 
@@ -106,6 +106,7 @@ Route::group([ 'middleware' => ['checkadmin']], function () {
     Route::get('/pay/invoice', [App\Http\Controllers\AdminController::class, 'showPayInvoice'])->name('pay_invoice');
     Route::post('/pay/invoice', [App\Http\Controllers\AdminController::class, 'payInvoice']);
     // Show all invoices
+    Route::get('/list/invoice', [App\Http\Controllers\InvoicesController::class, 'index']);
 
     // Delete invoices ---> must be an admin with privellages
     // Get Specific invoice by id

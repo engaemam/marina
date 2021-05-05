@@ -90,13 +90,15 @@ class AdminController extends Controller
         $total = $total * $tax;
 
         $invoice = Invoices::create([
-            'user_id' => Boats::find($request->boat_id)->user->id,
+            'user_id' => Boats::find($request->boat_id)->client->id,
             'boat_id' => $request->boat_id,
             'tax' => $request->tax,
             'issue_date' => \Carbon\Carbon::today(),
             'total' => $total,
+            'rate' => $boat->package->rate,
 
         ]);
+
         return view('home');
 
 
